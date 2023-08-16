@@ -8,6 +8,6 @@ namespace CosmosDateOnlyFiltering.Models
         public string Id { get; set; }
 
         [JsonProperty("createdAt")]
-        public DateOnly CreatedAt { get; set; }
+        public DateOnly? CreatedAt { get; set; }
     }
 }

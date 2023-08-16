@@ -60,10 +60,10 @@ var queryable = container.GetItemLinqQueryable<Ticket>(
 var result = queryable
     .Select(x => new
     {
-        x.Id,
-        x.CreatedAt.Day,
-        x.CreatedAt.Month,
-        x.CreatedAt.Year
+        Id = x.Id,
+        Year = x.CreatedAt == null ? -1 : x.CreatedAt.Value.Year,
+        Month = x.CreatedAt == null ? -1 : x.CreatedAt.Value.Month,
+        Day = x.CreatedAt == null ? -1 : x.CreatedAt.Value.Day,
     })
     .ToList();
 
